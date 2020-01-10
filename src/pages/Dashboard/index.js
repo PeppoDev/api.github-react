@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import apigit from "../../services/apigit";
+import apiGit from "../../services/apigit";
 import "./styles.css";
 
 export default function Dashboard() {
@@ -8,7 +8,7 @@ export default function Dashboard() {
   useEffect(() => {
     async function loadRepo() {
       const user = localStorage.getItem("user");
-      const response = await apigit.get("" + user + "/repos", {});
+      const response = await apiGit.get(user + "/repos", {});
       const data = response.data;
       setRepos(data);
     }

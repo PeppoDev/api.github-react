@@ -8,6 +8,10 @@ export default function Login({ history }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    if (username === "" || password === "") {
+      alert("Por favor preencha todos os campos!");
+      return;
+    }
     console.log(username);
     localStorage.setItem("user", username);
     history.push("/dashboard");
