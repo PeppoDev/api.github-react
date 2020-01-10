@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -82,12 +81,12 @@ button {
   margin-top: 4px;
   border-radius: 4px;
   padding: 5%;
-  background-color:#dddd  ;
+  background-color: #dddd;
   display: flex;
   flex-direction: column;
 }
 
-.tittlebar{
+.tittlebar {
   width: 100%;
   max-width: 600px;
   background-color: #444444;
@@ -96,85 +95,83 @@ button {
   padding: 2%;
 }
 
-.tittle{
-  font-family: 'Roboto', sans-serif;
+.tittle {
+  font-family: "Roboto", sans-serif;
   color: azure;
   font-size: 45px;
   margin-top: 5%;
-  margin-left: 4%; 
-  margin-right: 4%; 
+  margin-left: 4%;
+  margin-right: 4%;
   align-items: center;
 }
-.logo{
-  max-width:80px;
+.logo {
+  max-width: 80px;
   /* height: auto; */
 }
-.colorcompletetop{
+.colorcompletetop {
   width: 100%;
   max-width: 600px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   height: 2em;
-  background-color: #4d2162; 
+  background-color: #4d2162;
 }
-.colorcompletebot{
+.colorcompletebot {
   width: 100%;
   max-width: 600px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   height: 2em;
-  background-color: #4d2162; 
+  background-color: #4d2162;
 }
-.textlogin{
+.textlogin {
   margin-bottom: 20px;
 }
 
-.content form{
+.content form {
   display: flex;
   flex-direction: column;
 }
-.content form input{
+.content form input {
   margin-bottom: 20px;
   border: 1px solid #dddd;
   border-radius: 4px;
   height: 45px;
-  padding:0 15px;
+  padding: 0 15px;
   font-size: 16px;
 }
 
-.content form label{
+.content form label {
   font-size: 14px;
   color: #444444;
   font-weight: bold;
   margin-bottom: 8px;
-
 }
-.content form input{
+.content form input {
   margin-bottom: 20px;
   border: 1px solid #dddddd;
   border-radius: 2px;
   height: 45px;
-  padding:0 15px;
+  padding: 0 15px;
   font-size: 16px;
 }
-.content > p{
+.content > p {
   font-size: 22px;
   line-height: 30px;
   margin-bottom: 30px;
 }
 
-.content button.btn{
+.content button.btn {
   border: 0;
   border-radius: 2px;
-  width: 100%; 
+  width: 100%;
   height: 42px;
   padding: 0 20px;
   font-size: 16px;
   font-weight: bold;
-  background: #786faa;  
+  background: #786faa;
   cursor: pointer;
 }
-.content button.btn:hover{
+.content button.btn:hover {
   background: #7b7699;
 }
- 
