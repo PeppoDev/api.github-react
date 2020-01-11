@@ -6,6 +6,8 @@ export default function New({ history }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const returnPage = _ => history.push("/");
+
   const handleSubmit = async event => {
     event.preventDefault();
     const response = await apiGit(username).catch(error =>
@@ -33,16 +35,17 @@ export default function New({ history }) {
 
   return (
     <>
+      <p>Tela de Cadastro</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input
           type="text"
           name="username"
           id="username"
-          placeholder="Digite seu Usuário"
+          placeholder="Digite seu Username"
           onChange={event => setUsername(event.target.value)}
         />
-        <br />
+
         <label htmlFor="password">Senha</label>
         <input
           type="text"
@@ -51,11 +54,14 @@ export default function New({ history }) {
           placeholder="Digite sua Senha"
           onChange={event => setPassword(event.target.value)}
         />
-        <br />
+
         <button className="btn" type="submit">
-          Cadastrar!
+          Cadastrar
         </button>
       </form>
+      <button className="btn" type="submit" onClick={returnPage}>
+        Voltar
+      </button>
     </>
   );
 }
