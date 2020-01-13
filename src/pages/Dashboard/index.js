@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import apiGit from "../../services/apigit";
 import "./styles.css";
 
@@ -6,7 +7,6 @@ export default function Dashboard({ history }) {
   const [repos, setRepos] = useState([]);
   const exitPage = _ => {
     localStorage.setItem("user", undefined);
-    history.push("/");
   };
 
   useEffect(() => {
@@ -42,9 +42,11 @@ export default function Dashboard({ history }) {
           </li>
         ))}
       </ul>
-      <button className="btn" type="submit" onClick={exitPage}>
-        Sair
-      </button>
+      <Link to="/">
+        <button className="btn" type="submit" onClick={exitPage}>
+          Sair
+        </button>
+      </Link>
     </>
   );
 }

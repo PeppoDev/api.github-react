@@ -8,6 +8,7 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Login}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
+        <Route path="/dashboard/:page?" component={Dashboard}></Route>
         <Route path="/new" component={New}></Route>
       </Switch>
     </BrowserRouter>

@@ -7,7 +7,7 @@ export default function Login({ history }) {
   const [password, setPassword] = useState("");
   const usersString = localStorage.getItem("registeredUsers");
   const registeredUsers = usersString != null ? JSON.parse(usersString) : [];
-  const credentials = registeredUsers.find(i => i.username === username);
+  const credentials = registeredUsers.find(user => user.username === username);
 
   async function handleSubmit(event) {
     event.preventDefault();
