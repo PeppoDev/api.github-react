@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import apiGit from "../../services/apigit";
 import "./styles.css";
 
-export default function Dashboard() {
+export default function Dashboard({ history }) {
   const [repos, setRepos] = useState([]);
+  const exitPage = _ => {
+    localStorage.setItem("user", undefined);
+    history.push("/");
+  };
 
   useEffect(() => {
     async function loadRepo() {
@@ -38,6 +42,9 @@ export default function Dashboard() {
           </li>
         ))}
       </ul>
+      <button className="btn" type="submit" onClick={exitPage}>
+        Sair
+      </button>
     </>
   );
 }
