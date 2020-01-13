@@ -5,6 +5,9 @@ import "./styles.css";
 export default function Login({ history }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const usersString = localStorage.getItem("registeredUsers");
+  const registeredUsers = usersString != null ? JSON.parse(usersString) : [];
+  const credentials = registeredUsers.find(i => i.username === username);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -12,14 +15,24 @@ export default function Login({ history }) {
       alert("Por favor preencha todos os campos!");
       return;
     }
-    console.log(username);
-    localStorage.setItem("user", username);
-    history.push("/dashboard");
+
+    if (!credentials) {
+      alert("Usuário não encontrado. Por favor realize o cadastro!");
+      return;
+    }
+
+    if (credentials.password === password) {
+      console.log(`Usuário ${username} logado!`);
+      localStorage.setItem("user", username);
+      history.push("/dashboard");
+    } else {
+      alert("Senha incorreta!");
+    }
   }
   return (
     <>
       <p className="textlogin">
-        Um jeito <strong>fácil</strong> e <strong>rápido</strong> para acessar
+        Um jeito <strong>fácil</strong> e <strong>rápido</strong> de acessar
         seus repositórios.
       </p>
 
