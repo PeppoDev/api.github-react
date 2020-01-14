@@ -6048,6 +6048,11 @@ jsx-ast-utils@^2.2.1:
     array-includes "^3.0.3"
     object.assign "^4.1.0"
 
+jw-paginate@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/jw-paginate/-/jw-paginate-1.0.4.tgz#c6e7dbb4a6e9d62e501c7f9562a3a2a33d77c9b9"
+  integrity sha512-W0bv782exgCoynUL/egbRpaYwf/r6T6e02H870H5u3hfSgEYrxgz5POwmFF5aApS6iPi6yhZ0VF8IbafNFsntA==
+
 killable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.1.tgz#4c8ce441187a061c7474fb87ca08e2a638194892"

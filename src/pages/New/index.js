@@ -48,7 +48,7 @@ export default function New({ history }) {
 
         <label htmlFor="password">Senha</label>
         <input
-          type="text"
+          type="password"
           name="password"
           id="password"
           placeholder="Digite sua Senha"
