@@ -39,3 +39,8 @@ a.repos-link {
   color: #444;
   text-decoration: none;
 }
+div.pagination {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}

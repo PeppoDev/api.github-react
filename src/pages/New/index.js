@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "./styles.css";
 import apiGit from "../../services/apigit";
+import { InputBox, Button } from "../../components/";
 
 export default function New({ history }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const returnPage = _ => history.push("/");
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -37,31 +36,21 @@ export default function New({ history }) {
     <>
       <p>Tela de Cadastro</p>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
+        <InputBox
           name="username"
-          id="username"
-          placeholder="Digite seu Username"
-          onChange={event => setUsername(event.target.value)}
+          type="text"
+          varible={username}
+          callback={setUsername}
         />
-
-        <label htmlFor="password">Senha</label>
-        <input
-          type="password"
+        <InputBox
           name="password"
-          id="password"
-          placeholder="Digite sua Senha"
-          onChange={event => setPassword(event.target.value)}
+          type="password"
+          variable={password}
+          callback={setPassword}
         />
-
-        <button className="btn" type="submit">
-          Cadastrar
-        </button>
+        <Button text="Cadastrar" />
       </form>
-      <button className="btn" type="submit" onClick={returnPage}>
-        Voltar
-      </button>
+      <Button text="Voltar" link="/" />
     </>
   );
 }
