@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { InputBox, Button } from "../../components/";
+import { Link } from "react-router-dom";
 
 export default function Login({ history }) {
   const [username, setUsername] = useState("");
@@ -49,9 +50,11 @@ export default function Login({ history }) {
           variable={password}
           callback={setPassword}
         />
-        <Button text="Entrar" />
+        <Button>Entrar</Button>
       </form>
-      <Button text="Cadastrar" link="/New" />
+      <Link to="/New">
+        <Button>Cadastrar</Button>
+      </Link>
     </>
   );
 }

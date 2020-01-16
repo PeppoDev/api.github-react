@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "../../components";
-import RepoTile from "../../components/RepoTile";
+import { Link } from "react-router-dom";
+import { Button, RepoTile } from "../../components";
 import apiGit from "../../services/apigit";
 import "./styles.css";
 import paginate from "jw-paginate";
@@ -36,20 +36,24 @@ export default function Dashboard({ history }) {
       </ul>
       <div className="pagination">
         <Button
-          text="Anterior"
           onClick={() => setPage(page - 1)}
           disabled={page === paginateData.startPage}
           key="backwards"
-        />
+        >
+          Anterior
+        </Button>
         <div style={{ width: "5px" }} />
         <Button
-          text="Próximo"
           onClick={() => setPage(page + 1)}
           disabled={page === paginateData.endPage}
           key="forwards"
-        />
+        >
+          Próximo
+        </Button>
       </div>
-      <Button text="Sair" link="/" onClick={exitPage} />
+      <Link to="/">
+        <Button onClick={exitPage}>Sair</Button>
+      </Link>
     </>
   );
 }
