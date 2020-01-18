@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="container">
       <div className="colorcompletetop"></div>
-      <div className="tittlebar">
+      <div className="titlebar">
         <img src={logo} alt="" className="logo" />
-        <h2 className="tittle">API - GitHub</h2>
+        <h2 className="title">API - GitHub</h2>
       </div>
       <div className="colorcompletebot"></div>
 

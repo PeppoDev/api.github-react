@@ -86,7 +86,7 @@ button {
   flex-direction: column;
 }
 
-.tittlebar {
+.titlebar {
   width: 100%;
   max-width: 600px;
   background-color: #444444;
@@ -95,7 +95,7 @@ button {
   padding: 2%;
 }
 
-.tittle {
+.title {
   font-family: "Roboto", sans-serif;
   color: azure;
   font-size: 45px;
@@ -171,7 +171,12 @@ button {
   font-weight: bold;
   background: #786faa;
   cursor: pointer;
+  margin: 3px 0px 3px 0px;
 }
+.content button.btn[disabled] {
+  color: rgba(255, 255, 255, 0.589);
+}
+
 .content button.btn:hover {
   background: #7b7699;
 }
