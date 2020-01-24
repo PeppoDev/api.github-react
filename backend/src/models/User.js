@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema({
-    github_username: String,
-    password: String,
-});
+// const UserSchema = new mongoose.Schema({
+//     github_username: String,
+//     password: String,
+// });
 
-module.exports = mongoose.model('User', UserSchema);
+// module.exports = mongoose.model('User', UserSchema);
