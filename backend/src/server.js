@@ -2,15 +2,18 @@
 import express from "express";
 import cors from "cors";
 import routes from "./routes";
-import { getUser } from "./services/apiGit";
+import db from "./db";
+
+// Checa se o banco está online!
+// db.authenticate()
+//   .then(console.log("Autenticado com sucesso!"))
+//   .catch(console.log("Erro ao autenticar com banco!"));
 
 const app = express();
 
-// mongoose.connect()
-
 var corsOptions = {
   origin: "http://localhost:3000",
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));

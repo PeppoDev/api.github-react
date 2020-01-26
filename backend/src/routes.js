@@ -1,11 +1,12 @@
 import { Router } from "express";
-import API from "./services/apiGit";
+import UserController from "./ controllers/UserController";
+import RepoController from "./ controllers/RepoController";
 
 const routes = Router();
 
-routes.get("/users");
-routes.post("/users", (req, res) => {
-  API.getUser(req.body.username);
-});
+routes.get("/users", UserController.index);
+routes.post("/users", UserController.store);
+
+routes.get("/repos", RepoController.index);
 
 export default routes;

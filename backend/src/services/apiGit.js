@@ -4,10 +4,7 @@ const apiGit = axios.create({
   baseURL: "https://api.github.com/users/"
 });
 
-const getUser = async username => {
-  const userData = await apiGit.get(username);
-  console.log(userData);
-  return userData;
-};
+const getUser = async username => await apiGit.get(username);
+const getRepos = async username => await apiGit.get(username + "/repos");
 
-export default { getUser };
+export default { getUser, getRepos };
