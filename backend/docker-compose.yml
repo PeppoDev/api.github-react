@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: curso
       POSTGRES_DB: curso
     ports:
-      - 5432:5432
+      - 5454:5432
   curso:
     depends_on: [db]
     build: .

@@ -4,10 +4,10 @@ import User from "../db/models/user";
 
 export default {
   async index(req, res) {
-    const { username } = req.body;
+    const { username, password } = req.body;
 
     const user = await User.findOne({
-      where: { username },
+      where: { username, password },
       include: { association: "repos" }
     });
 
