@@ -1,0 +1,34 @@
+li.repos-item {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+  }
+  
+  li.repos-item header {
+    width: 100%;
+    background-size: cover;
+    max-width: 120px;
+    border-radius: 4px;
+  }
+  
+  li.repos-item strong {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #444;
+  }
+  li.repos-item p {
+    font-size: 15px;
+    color: #999999;
+  }
+  
+  div.repos-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  
+  a.repos-link {
+    color: #444;
+    text-decoration: none;
+  }
+  

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import "./styles.css";
+//services
 import apiGit from "../../services/apigit";
+//css
+import "./styles.css";
+//utils
+import handleSubmit from "../../utils/handleSubmit";
 
 export default function New({ history }) {
   const [username, setUsername] = useState("");
@@ -8,30 +12,38 @@ export default function New({ history }) {
 
   const returnPage = _ => history.push("/");
 
-  const handleSubmit = async event => {
-    event.preventDefault();
+  async function onCredentials(savedUsers) {
     const response = await apiGit(username).catch(error =>
       console.warn("Usuário não encontrado no GitHub")
     );
     if (!response) {
       alert("Usuário não existe!");
-      history.push("/");
       return;
-    }
-    const usersString = localStorage.getItem("registeredUsers");
-    const savedUsers = usersString != null ? JSON.parse(usersString) : [];
-    for (const currentUser of savedUsers) {
-      if (currentUser.username === username) {
-        alert("Usuário já cadastrado!");
-        history.push("/");
-        return;
-      }
     }
     savedUsers.push({ username, password });
     localStorage.setItem("registeredUsers", JSON.stringify(savedUsers));
     alert("Cadastrado com sucesso!");
     history.push("/");
-  };
+  }
+
+  // const handleSubmit = async event => {
+  //   event.preventDefault();
+  //   const usersString = localStorage.getItem("registeredUsers");
+  //   const savedUsers = usersString != null ? JSON.parse(usersString) : [];
+  //   const credentials = registeredUsers.find(
+  //     user => user.username === username
+  //   );
+  //   if (username === "" || password === "") {
+  //     alert("Por favor preencha todos os campos!");
+  //     return;
+  //   }
+  //   if (credentials) {
+  //     alert("Usuário já cadastrado");
+  //   }
+  //   if (!credentials) {
+  //     handleRegister(savedUsers);
+  //   }
+  // };
 
   return (
     <>
